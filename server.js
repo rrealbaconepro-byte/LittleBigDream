@@ -4,32 +4,41 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 10000;
 
-// Parse JSON and form data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve the LittleBigDream LBD website
+// Serve files from the repository root
 app.use(express.static(__dirname));
 
 // Homepage
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "LittleBigDream_LBD_style_preserved.html"));
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
-// Health/status endpoint
+// Server status
 app.get("/api/status", (req, res) => {
   res.json({
     online: true,
-    service: "LittleBigDream LBD",
-    status: "online"
+    name: "LittleBigPatch",
+    status: "online",
+    time: new Date().toISOString()
   });
 });
 
-// Fallback for direct page requests
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "LittleBigDream_LBD_style_preserved.html"));
+// Newest Levels
+app.get("/api/levels", (req, res) => {
+  res.json({
+    levels: []
+  });
 });
 
+// Catch-all for frontend routes
+app.use((req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
+// Start server
 app.listen(PORT, "0.0.0.0", () => {
-  console.log(`LittleBigDream LBD server running on port ${PORT}`);
+  console.log(`LittleBigPatch is running on port ${PORT}`);
+  console.log(`Serving: ${path.join(__dirname, "index.html")}`);
 });
