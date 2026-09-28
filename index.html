@@ -1,571 +1,495 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!DOCTYPE html>
-
-
-<!--
-
-Hello inquisitive HTML voyeur, peeking underneath my veil. Welcome to my abode...
-
-    __    ____  ____                  
-   / /   / __ )/ __ \   ____ ___  ___ 
-  / /   / __  / /_/ /  / __ `__ \/ _ \
- / /___/ /_/ / ____/_ / / / / / /  __/
-/_____/_____/_/    (_)_/ /_/ /_/\___/ 
-
--->
-<script src="https://djpieces.neocities.org/name.js"></script>
-
-<script>
-  if (typeof globalSiteSettings !== 'undefined') {
-    document.title = globalSiteSettings.name;
-  }
-
-</script>
-
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-<meta content="LittleBigDream LBD" property="og:site_name" />
-<meta content="article" property="og:type" />
-<link content="https://littlebigdream.onrender.com/" property="og:url" />
-<link href="https://littlebigdream.onrender.com/" rel="canonical_url" />
-
-<meta content="index,follow,archive" name="robots" />
-<meta content="LittleBigDream LBD" name="title" />
-<meta content="LittleBigPatch, Little Big Planet, LittleBigPatch 2, Community, Levels, LBD, Sackboy, PlayStation, PS3, Media Molecule, Sony" name="keywords" />
-<meta content="Browse and discover LittleBigPatch levels on LBD" name="description" />
-<meta content="Browse and discover LittleBigPatch levels on LBD" property="og:description" />
-<meta content="LittleBigDream LBD" property="og:title" />
-<meta content="/web/20110722172609im_/https://littlebigdream.onrender.com/" property="og:image" />
-<!-- LBD-STYLE -->
-<link href="https://djpieces.neocities.org/css/home_page.css" media="all" rel="stylesheet" type="text/css" />
-<!-- SCRIPTZ -->
-<script type="text/javascript">
-  //<![CDATA[
-  if (navigator.userAgent.match(/PlayStation/i)) {
-    document.write('<scr' + 'ipt type="text/javascript" src="https://web.archive.org/web/20110722172609/https://littlebigdream.onrender.com/js/jquery/jquery-1.4.0.min.js"></scr' + 'ipt>');
-  } else {
-    document.write('<scr' + 'ipt type="text/javascript" src="https://web.archive.org/web/20110722172609/https://littlebigdream.onrender.com/js/jquery/jquery-1.4.4.min.js"></scr' + 'ipt>');
-  }
-  //]]>
-
-</script>
-
-<script src="https://web.archive.org/web/20110722172609js_/https://littlebigdream.onrender.com/js/modernizr-1.5.min.js" type="text/javascript"></script>
-<script src="https://web.archive.org/web/20110722172609js_/https://littlebigdream.onrender.com/js/scripts.js" type="text/javascript"></script>
-
-<script src="https://web.archive.org/web/20110722172609js_/https://littlebigdream.onrender.com/js/jquery/plugins/jquery.swfobject.1-1-1.min.js" type="text/javascript"></script>
-
-<!-- icons -->
-<link href="/images/lbd-site-icon.png" rel="shortcut icon" type="image/x-icon" /> <!-- Site Icon -->
-<!-- iOS + Android icons -->
-<link href="https://littlebigdream.onrender.com/images/ios-startup.jpg" rel="apple-touch-startup-image" />
-<link href="/images/lbd-favicon.png" rel="apple-touch-icon" title="LBD" type="image/png" />
-
-<!-- AIIIIII-EEE! -->
-<!--[if lte IE 7]>
-  <link href="https://littlebigdream.onrender.com/css/style.ie7.css" media="all" rel="stylesheet" type="text/css" />
-<![endif]-->
-<!--[if lte IE 8]>
-  <link href="https://littlebigdream.onrender.com/css/style.ie8.css" media="all" rel="stylesheet" type="text/css" />
-<![endif]-->
-<!--[if lte IE 9]>
-  <link href="https://littlebigdream.onrender.com/css/style.ie9.css" media="all" rel="stylesheet" type="text/css" />
-<![endif]-->
-
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LittleBigDream — LBD</title>
+<meta name="description" content="LBD — the LittleBigDream community website.">
+<meta name="theme-color" content="#d9d9d9">
 
 <style>
-#homepagesearch fieldset{display:flex;gap:8px;margin:0;padding:0;border:0}
-#homepagesearch input{flex:1;min-width:0;padding:9px 12px;border:1px solid #aaa;border-radius:4px}
-#homepagesearch button{padding:9px 16px;border:1px solid #777;border-radius:4px;cursor:pointer}
+/* Rebuilt from the supplied LBP.me-style layout: same compact grid, panels,
+   top bar, soft gradients, borders and classic web-community appearance. */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;min-height:100%;font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#333}
+body{
+  background:#d7d7d7;
+  background-image:linear-gradient(#ededed 0,#d2d2d2 180px,#c8c8c8 100%);
+}
+a{color:#3d6f99;text-decoration:none}
+a:hover{text-decoration:underline}
+.hide{display:none}
+.clear{clear:both;height:0;overflow:hidden}
+.container_12{width:944px;margin:0 auto}
+.grid_12{width:944px}
+.grid_9{width:708px;float:left}
+.grid_8{width:629px;float:left}
+.grid_6{width:472px;float:left}
+.grid_4{width:314px;float:left}
+.grid_3{width:236px;float:left}
+.alpha{margin-left:0}.omega{margin-right:0}
+.push_3{margin-left:236px}
+#makebelieve{height:7px;background:rgba(255,255,255,.45);border-bottom:1px solid #aaa}
+
+/* top navigation */
+#topbar{
+  min-height:43px;
+  background:linear-gradient(#fafafa,#d4d4d4);
+  border-top:1px solid #fff;
+  border-bottom:1px solid #999;
+  box-shadow:0 1px 4px rgba(0,0,0,.2);
+}
+#topbar .grid_12{position:relative;min-height:43px}
+#switchbuttons{padding-top:8px}
+#switchbuttons a{
+  display:inline-block;
+  min-width:68px;
+  padding:7px 13px;
+  text-align:center;
+  font-weight:bold;
+  color:#444;
+  text-shadow:0 1px #fff;
+  background:linear-gradient(#fff,#d7d7d7);
+  border:1px solid #aaa;
+  border-radius:4px;
+  box-shadow:inset 0 1px rgba(255,255,255,.8),0 1px 2px rgba(0,0,0,.15);
+}
+#mainmenu{text-align:right;padding-top:6px;white-space:nowrap}
+#mainmenu ul{margin:0;padding:0;list-style:none}
+#mainmenu li{display:inline-block;margin-left:4px;vertical-align:middle}
+#mainmenu li a,.psntitle{
+  display:inline-block;
+  padding:7px 9px;
+  color:#444;
+  font-weight:bold;
+  text-shadow:0 1px #fff;
+}
+#mainmenu .psntitle{color:#666}
+.logopsn{
+  display:inline-block;width:15px;height:15px;margin-right:4px;
+  vertical-align:-3px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#fff,#888);
+  border:1px solid #777;
+}
+#lbd-auth-buttons{position:absolute;right:0;top:5px}
+#lbd-auth-buttons a{
+  display:inline-block!important;
+  margin-left:5px;
+  padding:7px 14px!important;
+  border:1px solid #999!important;
+  border-radius:4px!important;
+  background:linear-gradient(#fff,#d8d8d8)!important;
+  color:#333!important;
+  font-size:12px;
+  font-weight:bold;
+  box-shadow:inset 0 1px rgba(255,255,255,.9),0 1px 2px rgba(0,0,0,.16);
+}
+#lbd-auth-buttons a:hover{background:linear-gradient(#fff,#c8c8c8)!important;text-decoration:none}
+
+/* page background */
+#bgr{min-height:850px}
+#bg{
+  width:100%;
+  min-height:850px;
+  background:linear-gradient(rgba(255,255,255,.18),rgba(255,255,255,0));
+}
+.divider{height:13px;border:0}
+
+/* welcome/banner */
+#welcomeintro{
+  height:256px;
+  overflow:hidden;
+  border:1px solid #999;
+  border-radius:5px;
+  background:#eee;
+  box-shadow:0 2px 5px rgba(0,0,0,.25);
+}
+#welcomeintro img{
+  display:block;width:944px;height:256px;object-fit:cover;
+}
+
+/* search */
+#homepagesearch{
+  min-height:45px;
+  padding:7px 0;
+}
+#homepagesearch fieldset{
+  margin:0;
+  padding:6px 8px;
+  border:1px solid #aaa;
+  border-radius:4px;
+  background:linear-gradient(#f8f8f8,#dedede);
+  box-shadow:inset 0 1px rgba(255,255,255,.8);
+}
+.lbd-search{
+  display:flex;gap:6px;
+}
+.lbd-search input{
+  flex:1;
+  height:28px;
+  padding:4px 9px;
+  border:1px solid #aaa;
+  border-radius:3px;
+  background:#fff;
+  box-shadow:inset 0 1px 2px rgba(0,0,0,.12);
+}
+.lbd-search button{
+  height:28px;padding:0 18px;
+  border:1px solid #999;border-radius:3px;
+  background:linear-gradient(#fff,#d2d2d2);
+  font-weight:bold;color:#444;
+  cursor:pointer;
+}
+.lbd-search button:hover{background:linear-gradient(#fff,#c5c5c5)}
+
+/* classic four-panel area */
+.section{width:100%}
+.panel{
+  min-height:245px;
+  margin-right:0;
+  padding:10px;
+  border:1px solid #aaa;
+  background:linear-gradient(#f8f8f8,#e2e2e2);
+  box-shadow:0 1px 4px rgba(0,0,0,.18);
+  position:relative;
+}
+.panel:first-child{border-radius:5px 0 0 5px}
+.panel:last-child{border-radius:0 5px 5px 0}
+.panel h4{
+  margin:0 -1px 9px;
+  padding:7px 9px;
+  font-size:14px;
+  line-height:16px;
+  color:#444;
+  text-shadow:0 1px #fff;
+  border-bottom:1px solid #aaa;
+  background:linear-gradient(#fff,#d8d8d8);
+  box-shadow:0 1px rgba(255,255,255,.8);
+}
+.panel h4 a{color:#444}
+.panel .icon{float:right;width:14px;height:14px;border-radius:3px;background:#aaa;opacity:.65}
+.panel ul,.panel ol{margin:0;padding-left:19px}
+.panel li{margin:0;padding:5px 2px;border-bottom:1px dotted #aaa;line-height:16px}
+.panel li:last-child{border-bottom:0}
+.textlist{list-style:decimal}
+.quicklist{list-style:none;padding-left:0!important}
+.quicklist li{padding-left:4px}
+.smallnote{color:#777;line-height:17px;margin-top:8px}
+
+/* footer */
+.footer{
+  margin-top:20px;
+  padding:15px 0 28px;
+  border-top:1px solid #999;
+  background:rgba(220,220,220,.55);
+  box-shadow:inset 0 1px rgba(255,255,255,.65);
+}
+#sitemap,#logos{margin:0;padding:0;list-style:none}
+#sitemap li{display:inline-block;margin-right:15px}
+.footer small{color:#666}
+
+/* modal */
+#lbd-modal{
+  display:none;position:fixed;inset:0;z-index:9999;
+  background:rgba(0,0,0,.48);
+  align-items:center;justify-content:center;
+}
+#lbd-modal.open{display:flex}
+.lbd-modal-box{
+  width:390px;
+  border:1px solid #888;border-radius:6px;
+  background:linear-gradient(#f8f8f8,#ddd);
+  box-shadow:0 7px 28px rgba(0,0,0,.45);
+  overflow:hidden;
+}
+.lbd-modal-head{
+  padding:11px 14px;
+  border-bottom:1px solid #aaa;
+  background:linear-gradient(#fff,#d4d4d4);
+  font-size:15px;font-weight:bold;
+}
+.lbd-close{float:right;color:#555;cursor:pointer;font-size:18px}
+.lbd-modal-body{padding:15px}
+.lbd-field{margin-bottom:10px}
+.lbd-field label{display:block;margin-bottom:4px;font-weight:bold}
+.lbd-field input{
+  width:100%;height:31px;padding:5px 8px;
+  border:1px solid #aaa;border-radius:3px;
+  background:#fff;box-shadow:inset 0 1px 2px rgba(0,0,0,.1);
+}
+.lbd-actions{text-align:right;margin-top:13px}
+.lbd-actions button{
+  padding:7px 15px;border:1px solid #999;border-radius:4px;
+  background:linear-gradient(#fff,#d0d0d0);font-weight:bold;cursor:pointer;
+}
+.lbd-error{color:#a33;margin:7px 0;min-height:15px}
+.lbd-ok{color:#38733a;margin:7px 0;min-height:15px}
+.lbd-optional{font-weight:normal;color:#777;font-size:11px}
+
+/* responsive */
+@media(max-width:980px){
+  .container_12,.grid_12{width:94%}
+  .grid_3{width:25%}
+  .grid_9{width:75%}
+  .grid_8{width:66.66%}
+  .grid_4{width:33.33%}
+  .grid_6{width:50%}
+  .push_3{margin-left:25%}
+  #welcomeintro img{width:100%;height:256px}
+}
+@media(max-width:650px){
+  .grid_3,.grid_9,.grid_8,.grid_6,.grid_4{width:100%;float:none}
+  .push_3{margin-left:0}
+  .panel,.panel:first-child,.panel:last-child{border-radius:4px;margin-bottom:8px}
+  #lbd-auth-buttons{position:static;float:right;margin-top:-36px;margin-right:2%}
+  #mainmenu{display:none}
+  #welcomeintro{height:auto}
+  #welcomeintro img{height:auto;min-height:150px;object-fit:cover}
+}
 </style>
-
-
-<style>
-.lbd-auth-overlay{
-  position:fixed;inset:0;z-index:9999;display:none;
-  align-items:center;justify-content:center;padding:20px;
-  background:rgba(0,0,0,.58);
-}
-.lbd-auth-overlay.open{display:flex}
-.lbd-auth-box{
-  width:min(460px,100%);position:relative;
-  padding:25px 28px 28px;
-  background:linear-gradient(#fff,#edfaff);
-  border:1px solid #aaa;border-radius:10px;
-  box-shadow:0 15px 55px rgba(0,0,0,.45);
-  color:#333;
-}
-.lbd-auth-close{
-  position:absolute;right:10px;top:7px;
-  border:0;background:none;font-size:28px;line-height:1;
-  color:#666;cursor:pointer;
-}
-.lbd-auth-tabs{display:flex;gap:5px;margin-bottom:18px}
-.lbd-auth-tabs button{
-  flex:1;padding:9px;border:1px solid #aaa;border-radius:4px;
-  background:#e5e5e5;color:#333;cursor:pointer;font-weight:bold;
-}
-.lbd-auth-tabs button.active{
-  background:#fff;color:#176589;box-shadow:inset 0 -2px #176589;
-}
-.lbd-auth-box h2{margin:4px 0 6px;color:#176589;font-size:23px}
-.lbd-auth-box p{margin:0 0 20px;color:#666}
-.lbd-auth-box label{display:block;margin:12px 0 5px;font-weight:bold;color:#444}
-.lbd-auth-box label span{color:#c33}
-.lbd-auth-box label small{font-weight:normal;color:#888}
-.lbd-auth-box input{
-  width:100%;padding:10px 11px;border:1px solid #aaa;
-  border-radius:4px;background:#fff;color:#222;
-}
-.lbd-auth-submit{
-  width:100%;margin-top:20px;padding:11px 14px;
-  border:1px solid #777;border-radius:4px;
-  background:linear-gradient(#fff,#d9edf5);
-  color:#176589;font-weight:bold;cursor:pointer;
-}
-.lbd-auth-message{
-  min-height:20px;margin-top:13px;text-align:center;font-weight:bold;
-}
-</style>
-
 </head>
+
 <body>
-  <div id="makebelieve">
-    <span class="hide">&nbsp;</span>
+<div id="makebelieve"><span class="hide">&nbsp;</span></div>
+
+<div id="topbar">
+  <div class="container_12">
+    <div class="grid_12">
+      <div class="grid_4 alpha">
+        <div id="switchbuttons">
+          <a class="Home" href="/"><span>Home</span></a>
+        </div>
+      </div>
+
+      <div class="grid_8 omega">
+        <div id="mainmenu">
+          <ul>
+            <li><a href="#" onclick="return false;">LittleBigDream</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="lbd-auth-buttons">
+        <a href="#" onclick="openLBDModal('signup');return false;">Sign Up</a>
+        <a href="#" onclick="openLBDModal('login');return false;">Login</a>
+      </div>
+
+      <div class="clear"></div>
+    </div>
   </div>
-  <div id="topbar">
-<div id="lbd-auth-buttons" style="float:right; margin-top:6px; margin-right:8px; position:relative; z-index:1000;">
-  <a href="#" onclick="openLBDModal('signup'); return false;" style="display:inline-block; margin-left:6px; padding:7px 14px; background:#ffffff; border:1px solid #b8b8b8; border-radius:4px; color:#333; text-decoration:none; font-weight:bold; font-size:12px; box-shadow:0 1px 2px rgba(0,0,0,.15);">Sign Up</a>
-  <a href="#" onclick="openLBDModal('login'); return false;" style="display:inline-block; margin-left:6px; padding:7px 14px; background:#e9e9e9; border:1px solid #aaa; border-radius:4px; color:#333; text-decoration:none; font-weight:bold; font-size:12px; box-shadow:0 1px 2px rgba(0,0,0,.15);">Login</a>
 </div>
 
-    <div class="container_12">
-      <div class="grid_12">
-        <div class="grid_4 alpha">
-          <div id="switchbuttons">
+<div id="bgr">
+  <div id="bg">
+    <div class="clear divider">&nbsp;</div>
 
-            <a class="Home" href="/">
-              <span>Home</span>
-            </a>
-          </div>
+    <div class="section">
+      <div class="container_12">
+        <div class="grid_12" id="welcomeintro">
+          <img src="https://i.postimg.cc/rwqwWZsF/IMG-0709.jpg" alt="LittleBigDream">
         </div>
-        <div class="grid_8 omega">
-          <div id="mainmenu">
-            <ul class="loggedin" id="mm-options" style="display: none">
-              <li id="mm-options-trigger">
-                <a class="a" href="#">
-                  Options
-                </a>
-                <ul>
-                  <li id="mm-dashboard">
-                    <a href="/web/20110722172609/https://littlebigdream.onrender.com/" title="LBD Home">
-                      LBD Home
-                    </a>
-                  </li>
-                  <li id="mm-profile">
-                    <a href="/web/20110722172609/https://littlebigdream.onrender.com/me" title="My Profile">
-                      My Profile
-                    </a>
-                  </li>
-                  <li id="mm-queue">
-                    <a href="/web/20110722172609/https://littlebigdream.onrender.com/me/queue" title="My Queue">
-                      My Queue
-                    </a>
-                  </li>
-                  <li id="mm-privacysettings"><a href="/web/20110722172609/https://littlebigdream.onrender.com/privacy_settings" title="Privacy Settings">
-                      Privacy Settings
-                    </a></li>
-                  <li id="mm-settings"><a href="/web/20110722172609/https://littlebigdream.onrender.com/settings" title="Settings">
-                      Settings
-                    </a></li>
-                  <li id="mm-signout"><a href="/web/20110722172609/https://littlebigdream.onrender.com/~logout" title="Sign Out">
-                      Sign Out
-                    </a></li>
-                </ul>
-              </li>
-            </ul>
-            <ul class="loggedout" id="accountmenu">
-              <li>
-                <span class="psntitle">
-                  <span class="logopsn" title="LittleBigDream Account"></span>
-                  LittleBigDream
-                </span>
-              </li>
-              <li><a href="#" onclick="openAuth('signup'); return false;" title="Create a LittleBigDream account">
-                  Sign Up
-                </a></li>
-              <li>
-                <a href="#" onclick="openAuth('login'); return false;" title="Sign in to LittleBigDream">
-                  Login
-                </a>
-              </li>
-            </ul>
-          </div>
+
+        <div class="clear divider">&nbsp;</div>
+
+        <div class="grid_12" id="homepagesearch">
+          <fieldset>
+            <form class="lbd-search" onsubmit="lbdSearch(event)">
+              <input id="lbd-search-input" type="search" placeholder="Search LittleBigDream levels, creators and communities..." autocomplete="off">
+              <button type="submit">Search</button>
+            </form>
+          </fieldset>
         </div>
-        <div class="clear">&nbsp;</div>
+
+        <div class="clear divider">&nbsp;</div>
+      </div>
+
+      <div class="container_12">
+        <div class="grid_3 paddv panel popit" id="pnl-oneclick">
+          <h4>Quick Links <span class="icon">&nbsp;</span></h4>
+          <ul class="quicklist">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Newest Levels</a></li>
+            <li><a href="#">Trending</a></li>
+            <li><a href="#">Communities</a></li>
+            <li><a href="#">Profiles</a></li>
+          </ul>
+        </div>
+
+        <div class="grid_3 popit paddv panel" id="pnl-recentactivity">
+          <h4>Newest Levels <span class="icon">&nbsp;</span></h4>
+          <ol class="textlist">
+            <li><a href="#">Dreamy Hills</a></li>
+            <li><a href="#">Sky Factory</a></li>
+            <li><a href="#">Little Forest</a></li>
+            <li><a href="#">Dream Race</a></li>
+            <li><a href="#">Sackboy's Adventure</a></li>
+          </ol>
+        </div>
+
+        <div class="grid_3 popit paddv panel" id="pnl-trendinglvls">
+          <h4>Trending <span class="icon">&nbsp;</span></h4>
+          <ol class="textlist">
+            <li><a href="#">Popular Dreams</a></li>
+            <li><a href="#">Community Picks</a></li>
+            <li><a href="#">Featured Creators</a></li>
+            <li><a href="#">Recently Played</a></li>
+            <li><a href="#">Rising Levels</a></li>
+          </ol>
+        </div>
+
+        <div class="grid_3 popit paddv panel" id="pnl-mmpicks">
+          <h4><a href="#">Favourite Sites</a> <span class="icon">&nbsp;</span></h4>
+          <ol class="textlist">
+            <li><a href="#">LittleBigDream</a></li>
+            <li><a href="#">LBD Community</a></li>
+            <li><a href="#">Dream Archive</a></li>
+            <li><a href="#">Creator Hub</a></li>
+          </ol>
+          <div class="smallnote">More community-made sites can be added here.</div>
+        </div>
       </div>
     </div>
-  </div>
-  <div id="bgr">
-    <div id="bg">
-      <div class="clear divider">&nbsp;</div>
-      <div class="section">
-        <div class="container container_12">
-          <div class="container container_12">
-            <div class="grid_12" id="welcomeintro">
-<img height="256" src="https://i.postimg.cc/rwqwWZsF/IMG-0709.jpg" width="944" />
-              <div class="hide">
-              </div>
-            </div>
-          </div>
-          <div class="clear divider">&nbsp;</div> <!-- Keep here if removed background breaks -->
-          <div class="grid_12" id="homepagesearch">
-            <div class="grid_9 push_3 alpha">
-              <fieldset>
-                <input id="lbdSearch" type="search" placeholder="Search LittleBigDream levels..." aria-label="Search LittleBigDream levels" />
-                <button type="button" onclick="lbdSearchLevels()">Search</button>
-              </fieldset>
 
-            </div>
-          </div>
+    <div class="clear divider">&nbsp;</div>
 
-          <div class="clear divider">&nbsp;</div>
-        </div>
-        <div class="container container_12">
-          <div class="grid_3 paddv panel popit" id="pnl-oneclick">
-            <h4>
-              Quick Links
-              <span class="icon">&nbsp;</span>
-            </h4>
-            <ul class="paddh smlbutton">
-              <li>
-                <a class="button" href="/post">
-                  Every Level Currently Made
-                </a>
-              </li>
-              <li>
-                <a class="button" href="/projects">
-                  Level Creator (Coming Soon)
-                </a>
-              </li>
-              <li>
-                <a class="button" href="/fav_sites">
-                  Favourite Sites
-                </a>
-              </li>
-              <li>
-                <a class="button" href="/about_me">
-                  About LittleBigDream
-                </a>
-              </li>
-              <li>
-                <a class="button" href="/Release">
-                  LittleBigDream Release
-                </a>
-              </li><!-- add extra nav buttons here -->
+    <div class="footer">
+      <div class="container_12">
+        <div class="grid_12">
+          <div class="grid_6 alpha">
+            <ul id="sitemap">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Community</a></li>
+              <li><a href="#">About LBD</a></li>
             </ul>
           </div>
-
-          <div class="grid_3 popit paddv panel" id="pnl-recentactivity">
-            <h4>
-              <!--post list -->
-              <a href="/posts" title="Newest LittleBigDream levels!">Newest LittleBigDream Levels</a>
-              <span class="icon">&nbsp;</span>
-            </h4>
-            <h5>
-              <span><!-- Put discription here --></span>
-            </h5>
-            <ol class="levellist">
-              <li>
-                <a class="badge" href="/post/newest_0">
-                  <img alt="" height="50" src="/images/icons/posts/newest_0.png" width="50" /> <!-- Put alt -->
-                </a>
-                <a class="name" href="/post/newest_0">
-                  <div id="update_0">Dreamy Hills</div>
-                  
-                </a>
-              </li>
-              <li>
-                <a class="badge" href="/post/newest_1">
-                  <img alt="" height="50" src="images/icons/posts/newest_1.png" width="50" />
-                </a>
-                <a class="name" href="/post/newest_1">
-                  <div id="update_1">Sky Factory</div>
-                  
-                </a>
-              </li>
-              <li>
-                <a class="badge" href="/post/newest_2">
-                  <img alt="" height="50" src="/images/icons/posts/newest_2.png" width="50" />
-                </a>
-                <a class="name" href="/post/newest_2">
-                  <div id="update_2">Little Forest</div>
-                  
-                </a>
-              </li>
-              <li>
-                <a class="badge" href="/post/newest_3">
-                  <img alt="" height="50" src="/images/icons/posts/newest_3.png" width="50" />
-                </a>
-                <a class="name" href="/post/newest_3">
-                  <div id="update_3">Dream Race</div>
-                  
-                </a>
-              </li>
-            </ol>
+          <div class="grid_6 omega">
+            <ul id="logos"></ul>
           </div>
-
-          <div class="grid_3 popit paddv panel" id="pnl-trendinglvls">
-            <h4>
-              <a href="/todo" title="">LittleBigDream Roadmap</a>
-              <span class="icon">&nbsp;</span>
-            </h4>
-            <ul class="textlist"> <!-- add the Projects here -->
-
-              <li>
-                Create the LittleBigDream Client
-              </li>
-              <li>
-                Add Online Features
-              </li>
-              <li>
-                Add Community Page
-              </li>
-              <li>
-                Polish Icons
-              </li>
-              <li>
-                Polish Fonts
-              </li>
-            </ul>
-          </div>
-
-          <div class="grid_3 popit paddv panel" id="pnl-mmpicks">
-            <h4>
-              <a href="/fav_sites" title="Community sites and projects.">Favourite Sites</a>
-              <span class="icon">&nbsp;</span>
-            </h4>
-            <ol class="textlist">
-              <li>
-                <a target="_blank" href="https://melonking.net"><img alt="Visit Melonking.Net!" src="https://melonking.net/images/badges/MELON-BADGE-2.GIF" style="image-rendering: pixelated"></a>
-              </li>
-              <!-- Put the sites here -->
-            </ol>
-          </div>
-
-        </div>
-
-      </div>
-      <div class="clear divider">&nbsp;</div>
-      <div class="footer">
-        <div class="container container_12">
-          <div class="grid_12">
-            <div class="grid_6 alpha">
-              <ul id="sitemap">
-                <li class="loggedin">
-                  <a href="javascript:feedback_widget.show()">Feedback</a>
-                </li>
-
-
-              </ul>
-
-
-            </div>
-            <div class="grid_6 omega">
-              <ul id="logos">
-
-                <!-- can add extra logos here -->
-              </ul>
-            </div>
-            <div class="grid_12 alpha omega paddb">
-              <small>LittleBigDream · LBD community site</small>
-
-            </div>
+          <div class="grid_12 alpha omega" style="padding-top:12px">
+            <small>LittleBigDream · LBD community website</small>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+
+<div id="lbd-modal">
+  <div class="lbd-modal-box">
+    <div class="lbd-modal-head">
+      <span id="lbd-modal-title">Sign Up</span>
+      <span class="lbd-close" onclick="closeLBDModal()">×</span>
+    </div>
+    <div class="lbd-modal-body">
+      <form id="lbd-signup-form" onsubmit="lbdSignup(event)">
+        <div class="lbd-field">
+          <label>Gamer Tag</label>
+          <input id="signup-gamertag" required maxlength="30">
+        </div>
+        <div class="lbd-field">
+          <label>Username</label>
+          <input id="signup-username" required maxlength="24">
+        </div>
+        <div class="lbd-field">
+          <label>Password</label>
+          <input id="signup-password" type="password" required minlength="6">
+        </div>
+        <div class="lbd-field">
+          <label>Email <span class="lbd-optional">(optional)</span></label>
+          <input id="signup-email" type="email">
+        </div>
+        <div id="signup-message" class="lbd-error"></div>
+        <div class="lbd-actions"><button type="submit">Create Account</button></div>
+      </form>
+
+      <form id="lbd-login-form" style="display:none" onsubmit="lbdLogin(event)">
+        <div class="lbd-field">
+          <label>Username</label>
+          <input id="login-username" required>
+        </div>
+        <div class="lbd-field">
+          <label>Password</label>
+          <input id="login-password" type="password" required>
+        </div>
+        <div id="login-message" class="lbd-error"></div>
+        <div class="lbd-actions"><button type="submit">Login</button></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+function openLBDModal(type){
+  document.getElementById('lbd-modal').classList.add('open');
+  var signup=document.getElementById('lbd-signup-form');
+  var login=document.getElementById('lbd-login-form');
+  document.getElementById('lbd-modal-title').textContent=type==='signup'?'Sign Up':'Login';
+  signup.style.display=type==='signup'?'block':'none';
+  login.style.display=type==='login'?'block':'none';
+  document.getElementById('signup-message').textContent='';
+  document.getElementById('login-message').textContent='';
+}
+function closeLBDModal(){document.getElementById('lbd-modal').classList.remove('open')}
+document.getElementById('lbd-modal').addEventListener('click',function(e){
+  if(e.target===this)closeLBDModal();
+});
+
+function getLBDAccounts(){
+  try{return JSON.parse(localStorage.getItem('lbdAccounts')||'[]')}catch(e){return []}
+}
+function lbdSignup(e){
+  e.preventDefault();
+  var gamer=document.getElementById('signup-gamertag').value.trim();
+  var username=document.getElementById('signup-username').value.trim();
+  var password=document.getElementById('signup-password').value;
+  var email=document.getElementById('signup-email').value.trim();
+  var msg=document.getElementById('signup-message');
+  var accounts=getLBDAccounts();
+
+  if(accounts.some(function(a){return a.username.toLowerCase()===username.toLowerCase()})){
+    msg.textContent='That username is already taken.';
+    return;
+  }
+
+  accounts.push({gamerTag:gamer,username:username,password:password,email:email});
+  localStorage.setItem('lbdAccounts',JSON.stringify(accounts));
+  localStorage.setItem('lbdCurrentUser',username);
+  msg.className='lbd-ok';
+  msg.textContent='Account created. You are now logged in.';
+  setTimeout(closeLBDModal,700);
+}
+function lbdLogin(e){
+  e.preventDefault();
+  var username=document.getElementById('login-username').value.trim();
+  var password=document.getElementById('login-password').value;
+  var msg=document.getElementById('login-message');
+  var account=getLBDAccounts().find(function(a){
+    return a.username.toLowerCase()===username.toLowerCase() && a.password===password;
+  });
+  if(!account){
+    msg.textContent='Incorrect username or password.';
+    return;
+  }
+  localStorage.setItem('lbdCurrentUser',account.username);
+  msg.className='lbd-ok';
+  msg.textContent='Login successful.';
+  setTimeout(closeLBDModal,700);
+}
+function lbdSearch(e){
+  e.preventDefault();
+  var q=document.getElementById('lbd-search-input').value.trim();
+  if(!q)return;
+  alert('LBD search: '+q);
+}
+</script>
 
 <script>
 function lbdSearchLevels(){
-  const input = document.getElementById("lbdSearch");
-  const q = (input.value || "").trim().toLowerCase();
-  const links = document.querySelectorAll("#pnl-recentactivity .levellist li");
-  links.forEach(li => {
-    li.style.display = (!q || li.textContent.toLowerCase().includes(q)) ? "" : "none";
+  const q=(document.getElementById('lbdSearch').value||'').trim().toLowerCase();
+  document.querySelectorAll('#pnl-recentactivity .levellist li').forEach(function(li){
+    li.style.display=!q || li.textContent.toLowerCase().includes(q)?'':'none';
   });
 }
-</script>
-
-
-<div id="lbdAuthOverlay" class="lbd-auth-overlay" aria-hidden="true">
-  <div class="lbd-auth-box" role="dialog" aria-modal="true" aria-labelledby="lbdAuthTitle">
-    <button class="lbd-auth-close" type="button" onclick="closeAuth()" aria-label="Close">×</button>
-
-    <div class="lbd-auth-tabs">
-      <button id="lbdTabSignup" type="button" onclick="openAuth('signup')">Sign Up</button>
-      <button id="lbdTabLogin" type="button" onclick="openAuth('login')">Login</button>
-    </div>
-
-    <h2 id="lbdAuthTitle">Create your LittleBigDream account</h2>
-    <p id="lbdAuthSubtitle">Join LBD and start discovering community creations.</p>
-
-    <form id="lbdSignupForm" onsubmit="signupLBD(event)">
-      <label>Gamer Tag <span>*</span></label>
-      <input id="signupGamerTag" type="text" maxlength="24" required placeholder="Your Gamer Tag">
-
-      <label>Username <span>*</span></label>
-      <input id="signupUsername" type="text" maxlength="20" required placeholder="Your username">
-
-      <label>Password <span>*</span></label>
-      <input id="signupPassword" type="password" minlength="6" required placeholder="At least 6 characters">
-
-      <label>Email <small>(optional)</small></label>
-      <input id="signupEmail" type="email" placeholder="you@example.com">
-
-      <button class="lbd-auth-submit" type="submit">Create Account</button>
-    </form>
-
-    <form id="lbdLoginForm" style="display:none" onsubmit="loginLBD(event)">
-      <label>Username <span>*</span></label>
-      <input id="loginUsername" type="text" required placeholder="Your username">
-
-      <label>Password <span>*</span></label>
-      <input id="loginPassword" type="password" required placeholder="Your password">
-
-      <button class="lbd-auth-submit" type="submit">Login</button>
-    </form>
-
-    <div id="lbdAuthMessage" class="lbd-auth-message"></div>
-  </div>
-</div>
-
-
-<script>
-function getLBDAcounts(){
-  try { return JSON.parse(localStorage.getItem("lbdAccounts") || "[]"); }
-  catch(e){ return []; }
-}
-
-function saveLBDAcounts(accounts){
-  localStorage.setItem("lbdAccounts", JSON.stringify(accounts));
-}
-
-function openAuth(type){
-  const overlay=document.getElementById("lbdAuthOverlay");
-  const signup=document.getElementById("lbdSignupForm");
-  const login=document.getElementById("lbdLoginForm");
-  const title=document.getElementById("lbdAuthTitle");
-  const subtitle=document.getElementById("lbdAuthSubtitle");
-  const msg=document.getElementById("lbdAuthMessage");
-  const signupTab=document.getElementById("lbdTabSignup");
-  const loginTab=document.getElementById("lbdTabLogin");
-
-  msg.textContent="";
-  overlay.classList.add("open");
-  overlay.setAttribute("aria-hidden","false");
-
-  if(type==="signup"){
-    signup.style.display="block";
-    login.style.display="none";
-    title.textContent="Create your LittleBigDream account";
-    subtitle.textContent="Join LBD and start discovering community creations.";
-    signupTab.classList.add("active");
-    loginTab.classList.remove("active");
-  }else{
-    signup.style.display="none";
-    login.style.display="block";
-    title.textContent="Login to LittleBigDream";
-    subtitle.textContent="Sign in to your LBD account.";
-    signupTab.classList.remove("active");
-    loginTab.classList.add("active");
-  }
-}
-
-function closeAuth(){
-  const overlay=document.getElementById("lbdAuthOverlay");
-  overlay.classList.remove("open");
-  overlay.setAttribute("aria-hidden","true");
-}
-
-function authMessage(text){
-  document.getElementById("lbdAuthMessage").textContent=text;
-}
-
-function signupLBD(event){
-  event.preventDefault();
-
-  const gamerTag=document.getElementById("signupGamerTag").value.trim();
-  const username=document.getElementById("signupUsername").value.trim();
-  const password=document.getElementById("signupPassword").value;
-  const email=document.getElementById("signupEmail").value.trim();
-
-  if(!gamerTag || !username || !password){
-    authMessage("Please fill in all required fields.");
-    return;
-  }
-
-  if(password.length < 6){
-    authMessage("Password must be at least 6 characters.");
-    return;
-  }
-
-  const accounts=getLBDAcounts();
-  const exists=accounts.some(a=>a.username.toLowerCase()===username.toLowerCase());
-
-  if(exists){
-    authMessage("That username is already taken.");
-    return;
-  }
-
-  accounts.push({
-    gamerTag:gamerTag,
-    username:username,
-    password:password,
-    email:email || "",
-    createdAt:new Date().toISOString()
-  });
-
-  saveLBDAcounts(accounts);
-  localStorage.setItem("lbdCurrentUser", username);
-
-  authMessage("Account created! Welcome to LittleBigDream, " + gamerTag + ".");
-  document.getElementById("lbdSignupForm").reset();
-
-  setTimeout(closeAuth,1200);
-}
-
-function loginLBD(event){
-  event.preventDefault();
-
-  const username=document.getElementById("loginUsername").value.trim();
-  const password=document.getElementById("loginPassword").value;
-  const accounts=getLBDAcounts();
-
-  const account=accounts.find(a =>
-    a.username.toLowerCase()===username.toLowerCase() &&
-    a.password===password
-  );
-
-  if(!account){
-    authMessage("Incorrect username or password.");
-    return;
-  }
-
-  localStorage.setItem("lbdCurrentUser", account.username);
-  authMessage("Welcome back, " + account.gamerTag + "!");
-  document.getElementById("lbdLoginForm").reset();
-
-  setTimeout(closeAuth,1200);
-}
-
-document.getElementById("lbdAuthOverlay").addEventListener("click",function(e){
-  if(e.target===this) closeAuth();
-});
 </script>
 
 </body>
